@@ -1,0 +1,2884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Full-Stack Developer & Designer</title>
+    <meta name="description" content="Professional full-stack developer and graphic designer creating modern web applications, mobile apps, and stunning visual designs. Expert in React, Node.js, Python, and Adobe Creative Suite.">
+    <meta name="keywords" content="full-stack developer, web developer, graphic designer, React, Node.js, Python, UI/UX design, mobile app development">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Portfolio - Full-Stack Developer & Designer">
+    <meta property="og:description" content="Professional full-stack developer and graphic designer creating modern digital experiences.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init("YOUR_USER_ID");
+  })();
+</script>
+<style>
+    /* Contact Section Styles */
+
+    
+.social-links{
+    display: grid;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.social-links a {
+    background: #1a1a1a;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+.social-links a i.fa-linkedin {
+    color: #1544ed;
+}
+.social-links a i.fa-github {
+    color: purple;
+}
+.social-links a i.fa-dribbble {
+    color: rgb(244, 105, 35);
+}
+.social-links a i.fa-behance {
+    color: rgb(35, 227, 244);
+}
+.social-links a:hover {
+    background: rgba(250, 188, 137, 0.2);
+}
+
+
+
+/* Form Elements */
+#contact-form input,
+#contact-form select,
+#contact-form textarea {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  width: 100%;
+}
+
+#contact-form button {
+  background-color: #00b894;
+  color: #fff;
+  padding: 14px;
+  border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+    }
+
+    #contact-form button:hover {
+    background-color: #019875;
+    }
+    #contact-form input:focus,
+    #contact-form select:focus,
+    #contact-form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 8px #00b894;
+    border-color: #00b894;
+    }
+
+
+.footer-social{
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.footer-social a {
+    background: #1a1a1a;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+.footer-social a i.fa-linkedin {
+    color: #1544ed;
+}
+.footer-social a i.fa-github {
+    color: purple;
+}
+.footer-social a i.fa-dribbble {
+    color: rgb(244, 105, 35);
+}
+.footer-social a i.fa-behance {
+    color: rgb(35, 227, 244);
+    &:hover{
+        color: rgb(185, 248, 248);
+    }
+}
+.footer-social a:hover {
+    background: rgba(14, 14, 14, 0.2);
+}
+
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #f1f5f9;
+    background-color: #0f172a;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* Base Styles */
+.projects {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.section-title .highlight {
+  color: #007bff;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Project Card */
+.project-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.2s; }
+.project-card:nth-child(2) { animation-delay: 0.4s; }
+.project-card:nth-child(3) { animation-delay: 0.6s; }
+.project-card:nth-child(4) { animation-delay: 0.8s; }
+.project-card:nth-child(5) { animation-delay: 1s; }
+.project-card:nth-child(6) { animation-delay: 1.2s; }
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tech-tags span {
+  background-color: #e0e0e0;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* CTA Animation */
+.projects-cta {
+  text-align: center;
+  margin-top: 40px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+  }
+
+  .tech-tags span {
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* Color Variables */
+:root {
+    --primary: #0f172a;
+    --secondary: #1e293b;
+    --accent: #3b82f6;
+    --creative: #8b5cf6;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --pink: #ec4899;
+    --indigo: #6366f1;
+    --slate-50: #f8fafc;
+    --slate-300: #cbd5e1;
+    --slate-400: #94a3b8;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-800: #1e293b;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.25);
+}
+
+.btn-secondary {
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    background: transparent;
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+.btn-creative {
+    background-color: var(--creative);
+    color: white;
+}
+
+.btn-creative:hover {
+    background-color: #7c3aed;
+}
+
+.btn-success {
+    background-color: var(--success);
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #059669;
+}
+
+.btn-warning {
+    background-color: var(--warning);
+    color: var(--primary);
+}
+
+.btn-warning:hover {
+    background-color: #d97706;
+}
+
+.btn-pink {
+    background-color: var(--pink);
+    color: white;
+}
+
+.btn-pink:hover {
+    background-color: #db2777;
+}
+
+.btn-indigo {
+    background-color: var(--indigo);
+    color: white;
+}
+
+.btn-indigo:hover {
+    background-color: #4f46e5;
+}
+
+.btn-accent {
+    background-color: var(--accent);
+    color: white;
+}
+
+.btn-accent:hover {
+    background-color: #2563eb;
+}
+
+.btn-full {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--slate-700);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: var(--primary);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--slate-300);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent);
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--slate-300);
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Section Styles */
+section {
+    padding: 5rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section-title .highlight {
+    color: var(--accent);
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    color: var(--slate-400);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 4rem;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.title-highlight {
+    background: linear-gradient(135deg, var(--accent), var(--creative));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--slate-300);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-container img {
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px rgba(59, 130, 246, 0.2);
+    max-width: 100%;
+    height: auto;
+}
+
+.floating-icon {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    animation: float 3s ease-in-out infinite;
+}
+
+.code-icon {
+    top: -1rem;
+    right: -1rem;
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--creative);
+    font-size: 2rem;
+}
+
+.design-icon {
+    bottom: -1rem;
+    left: -1rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--success);
+    font-size: 1.5rem;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* About Section */
+.about {
+    background-color: var(--secondary);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image img {
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.about-text h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--slate-50);
+}
+
+.about-text p {
+    color: var(--slate-300);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-number.accent { color: var(--accent); }
+.stat-number.creative { color: var(--creative); }
+.stat-number.success { color: var(--success); }
+.stat-number.warning { color: var(--warning); }
+
+.stat-label {
+    color: var(--slate-400);
+    font-size: 0.9rem;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.skill-category {
+    background-color: var(--secondary);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--slate-700);
+    transition: border-color 0.3s ease;
+}
+
+.skill-category:hover {
+    border-color: var(--accent);
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.category-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+}
+
+.category-icon.accent {
+    background-color: rgba(59, 130, 246, 0.2);
+    color: var(--accent);
+}
+
+.category-icon.success {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: var(--success);
+}
+
+.category-icon.creative {
+    background-color: rgba(139, 92, 246, 0.2);
+    color: var(--creative);
+}
+
+.category-header h3 {
+    font-size: 1.5rem;
+    color: var(--slate-50);
+}
+
+.skill-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.skill-bar {
+    margin-bottom: 1rem;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.skill-info span:first-child {
+    color: var(--slate-300);
+}
+
+.skill-percent {
+    font-weight: 600;
+}
+
+.skill-progress {
+    background-color: var(--slate-700);
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    border-radius: 0.25rem;
+    transition: width 2s ease-in-out;
+    width: 0;
+}
+
+.skill-fill.accent { background-color: var(--accent); }
+.skill-fill.success { background-color: var(--success); }
+.skill-fill.creative { background-color: var(--creative); }
+
+.tech-stack {
+    background-color: var(--secondary);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--slate-700);
+}
+
+.tech-stack h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--slate-50);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: var(--slate-800);
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.tech-item:hover {
+    background-color: var(--slate-700);
+}
+
+.tech-item i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+.tech-item span {
+    color: var(--slate-300);
+    font-size: 0.9rem;
+}
+
+/* Projects Section */
+.projects {
+    background-color: var(--secondary);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.project-card {
+    background-color: var(--slate-800);
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid var(--slate-700);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(123, 231, 101, 0.3);
+}
+
+.project-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--slate-50);
+}
+
+.project-links {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.project-links a {
+    color: var(--slate-400);
+    transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+    color: var(--accent);
+}
+
+.project-description {
+    color: green;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+    background-color: rgba(246, 100, 59, 0.2);
+    color: var(--accent);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+}
+
+.projects-cta {
+    text-align: center;
+}
+
+/* Services Section */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: var(--secondary);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--slate-700);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    box-shadow: 0 10px 30px rgba(136, 248, 121, 0.2);
+}
+
+.service-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.service-icon.accent {
+    background-color: rgba(59, 130, 246, 0.2);
+    color: var(--accent);
+}
+
+.service-icon.creative {
+    background-color: rgba(139, 92, 246, 0.2);
+    color: var(--creative);
+}
+
+.service-icon.success {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: var(--success);
+}
+
+.service-icon.warning {
+    background-color: rgba(245, 158, 11, 0.2);
+    color: var(--warning);
+}
+
+.service-icon.pink {
+    background-color: rgba(236, 72, 153, 0.2);
+    color: var(--pink);
+}
+
+.service-icon.indigo {
+    background-color: rgba(99, 102, 241, 0.2);
+    color: var(--indigo);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--slate-50);
+}
+
+.service-card p {
+    color: var(--slate-300);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.service-features {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.service-features li {
+    color: var(--slate-300);
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.service-features li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.service-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: var(--secondary);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background-color: var(--slate-800);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--slate-700);
+}
+
+.testimonial-stars {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-stars i {
+    color: #fbbf24;
+    margin-right: 0.25rem;
+}
+
+.testimonial-text {
+    color: var(--slate-300);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-author img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+    object-fit: cover;
+}
+
+.author-name {
+    font-weight: 600;
+    color: var(--slate-50);
+}
+
+.author-position {
+    color: var(--slate-400);
+    font-size: 0.9rem;
+}
+
+/* Contact Section */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contact-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--slate-50);
+}
+
+.contact-text p {
+    color: var(--slate-300);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.contact-details {
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.contact-icon.accent {
+    background-color: rgba(59, 130, 246, 0.2);
+    color: var(--accent);
+}
+
+.contact-icon.success {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: var(--success);
+}
+
+.contact-icon.creative {
+    background-color: rgba(139, 92, 246, 0.2);
+    color: var(--creative);
+}
+
+.contact-label {
+    font-weight: 600;
+    color: var(--slate-50);
+    margin-bottom: 0.25rem;
+}
+
+.contact-value {
+    color: var(--slate-300);
+}
+
+.social-links h4 {
+    color: var(--slate-50);
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--slate-800);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--slate-400);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--accent);
+    background-color: rgba(246, 199, 59, 0.2);
+}
+
+/* Contact Form */
+.contact-form-container {
+    background-color: var(--secondary);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--slate-700);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--slate-300);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--slate-800);
+    border: 1px solid var(--slate-600);
+    border-radius: 0.5rem;
+    color: var(--slate-50);
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--slate-400);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--secondary);
+    border-top: 1px solid var(--slate-700);
+    padding: 3rem 0 1.5rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.footer-description {
+    color: var(--slate-300);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 400px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-links h4 {
+    color: var(--slate-50);
+    margin-bottom: 1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--slate-300);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--slate-700);
+}
+
+.footer-bottom p {
+    color: var(--slate-400);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 4rem;
+        flex-direction: column;
+        background-color: var(--primary);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+        border-top: 1px solid var(--slate-700);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .nav-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid,
+    .services-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Loading Animation */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--slate-700);
+    border-top: 4px solid var(--accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scroll animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.animate-on-scroll.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--slate-600);
+    border-radius: 4px;
+}
+
+  ::-webkit-scrollbar-thumb:hover {
+        background: var(--accent);
+    }
+
+/* Removed duplicate and conflicting .tech-stack, .tech-stack h3, .tech-grid, .tech-item, .tech-item:hover, .tech-item span definitions */
+
+
+
+
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+</style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Portfolio</span>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line">Full-Stack</span>
+                        <span class="title-highlight">Developer</span>
+                        <span class="title-line">& Designer</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        I create digital experiences that blend beautiful design with powerful functionality. 
+                        From concept to deployment, I bring your vision to life.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-eye"></i>
+                            View My Work
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Modern development workspace setup">
+                        <div class="floating-icon code-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="floating-icon design-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span>About</span> <span class="highlight">Me</span>
+                </h2>
+                <p class="section-subtitle">
+                    Passionate about creating digital solutions that make a difference
+                </p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="mypic.jpg" alt="Professional picture">
+                </div>
+                <div class="about-text">
+                    <h3>Full-Stack Developer & Graphics Designer</h3>
+                    <p>
+                        With over 1 years of experience in web development and design, I specialize in creating 
+                        comprehensive digital solutions. My unique combination of technical expertise and creative 
+                        vision allows me to deliver projects that are both functionally robust and visually stunning.
+                    </p>
+                    <p>
+                        I work with modern technologies like React, Node.js, Python, and cloud platforms, while 
+                        also excelling in graphic design using Adobe Creative Suite and Figma. This dual expertise 
+                        enables me to handle projects from initial concept through final deployment.
+                    </p>
+                    
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number accent">50+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number creative">30+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number success">5+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number warning">10+</div>
+                            <div class="stat-label">Awards Won</div>
+                        </div>
+                    </div>
+                    
+                    <a href="FRONTEND_Web_Developer_Resume.pdf" class="btn btn-creative" download>
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span>My</span> <span class="highlight">Skills</span>
+                </h2>
+                <p class="section-subtitle">
+                    Technical expertise combined with creative design capabilities
+                </p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon accent">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>React / Next.js</span>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill accent" data-width="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>JavaScript / TypeScript</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill accent" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>HTML5 / CSS3</span>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill accent" data-width="95"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon success">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Node.js / Express</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill success" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Python / Django</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill success" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Database Management</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill success" data-width="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon creative">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Design</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>UI/UX Design</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill creative" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Adobe Creative Suite</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill creative" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Figma / Sketch</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill creative" data-width="90"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div class="tech-stack">
+                <h3>Technology Stack</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <i class="fab fa-react"></i>
+                        <span>React</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-node-js"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-aws"></i>
+                        <span>AWS</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-figma"></i>
+                        <span>Figma</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-docker"></i>
+                        <span>Docker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span>Featured</span> <span class="highlight">Projects</span>
+                </h2>
+                <p class="section-subtitle">
+                    A showcase of my recent work combining technical excellence with creative design
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project Card -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="postcoffee page.jpeg" alt="Coffee Shop">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Coffee Shop E-Commerce</h3>
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <p class="project-description">Full-stack e-commerce solution with React, Node.js, and Stripe integration for seamless coffee ordering experience.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Stripe</span>
+                        </div>
+                        <a href="#contact" class="btn btn-secondary">View Case Study</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="posteyeclinic edited.jpeg" alt="Eye Clinic">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Eye Clinic Management</h3>
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <p class="project-description">Responsive website for an eye clinic with appointment booking, patient management, and telemedicine features.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                        <a href="#contact" class="btn btn-secondary">View Case Study</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Brand Identity">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Brand Identity Design</h3>
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#"><i class="fab fa-dribbble"></i></a>
+                            </div>
+                        </div>
+                        <p class="project-description">Complete brand identity package including logo design, color palette, and marketing materials for modern fintech company.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Adobe Illustrator</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Photoshop</span>
+                        </div>
+                        <a href="#contact" class="btn btn-secondary">View Case Study</a>
+                    </div>
+                </div>
+
+
+                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="redstorescreen.jpeg" alt="Brand Identity">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Brand Identity Design</h3>
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#"><i class="fab fa-dribbble"></i></a>
+                            </div>
+                        </div>
+                        <p class="project-description">Complete brand identity package including logo design, color palette, and marketing materials for modern fintech company.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Adobe Illustrator</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Photoshop</span>
+                        </div>
+                        <a href="#contact" class="btn btn-secondary">View Case Study</a>
+                    </div>
+                </div>
+
+
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="bankpostedit.jpeg" alt="Brand Identity">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Brand Identity Design</h3>
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#"><i class="fab fa-dribbble"></i></a>
+                            </div>
+                        </div>
+                        <p class="project-description">Complete brand identity package including logo design, color palette, and marketing materials for modern fintech company.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Adobe Illustrator</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Photoshop</span>
+                        </div>
+                        <a href="#contact" class="btn btn-secondary">View Case Study</a>
+                    </div>
+                </div>
+
+
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="perfume8.jpeg" alt="Brand Identity">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Brand Identity Design</h3>
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#"><i class="fab fa-dribbble"></i></a>
+                            </div>
+                        </div>
+                        <p class="project-description">Complete brand identity package including logo design, color palette, and marketing materials for modern fintech company.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Adobe Illustrator</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Photoshop</span>
+                        </div>
+                        <a href="#contact" class="btn btn-secondary">View Case Study</a>
+                    </div>
+                </div>
+
+
+                  <div class="project-card">
+                    <div class="project-image">
+                        <img src="streamflix.jpeg" alt="Brand Identity">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Brand Identity Design</h3>
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#"><i class="fab fa-dribbble"></i></a>
+                            </div>
+                        </div>
+                        <p class="project-description">Complete brand identity package including logo design, color palette, and marketing materials for modern fintech company.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Adobe Illustrator</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Photoshop</span>
+                        </div>
+                        <a href="#contact" class="btn btn-secondary">View Case Study</a>
+                    </div>
+                </div>
+
+
+                  <div class="project-card">
+                    <div class="project-image">
+                        <img src="calc.jpeg" alt="Brand Identity">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Brand Identity Design</h3>
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#"><i class="fab fa-dribbble"></i></a>
+                            </div>
+                        </div>
+                        <p class="project-description">Complete brand identity package including logo design, color palette, and marketing materials for modern fintech company.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Adobe Illustrator</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Photoshop</span>
+                        </div>
+                        <a href="#contact" class="btn btn-secondary">View Case Study</a>
+                    </div>
+                </div>
+
+
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Mobile App">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Fitness Tracking App</h3>
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <p class="project-description">Cross-platform mobile application for fitness tracking with social features and gamification elements.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Redux</span>
+                        </div>
+                        <a href="#contact" class="btn btn-secondary">View Case Study</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Dashboard">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Analytics Dashboard</h3>
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <p class="project-description">Real-time analytics dashboard with data visualization and reporting capabilities for business intelligence.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <a href="#contact" class="btn btn-secondary">View Case Study</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="E-learning">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">E-Learning Platform</h3>
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <p class="project-description">Comprehensive e-learning platform with video streaming, progress tracking, and interactive assessments.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">AWS</span>
+                        </div>
+                        <a href="#contact" class="btn btn-secondary">View Case Study</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects-cta">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i>
+                    Start Your Project
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span>My</span> <span class="highlight">Services</span>
+                </h2>
+                <p class="section-subtitle">
+                    Comprehensive digital solutions tailored to your business needs
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon accent">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Full-stack web applications using modern technologies like React, Node.js, and cloud platforms. From concept to deployment with responsive design and optimal performance.</p>
+                    <ul class="service-features">
+                        <li>Custom Web Applications</li>
+                        <li>E-commerce Solutions</li>
+                        <li>API Development</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                    <div class="service-price">Starting at $2,500</div>
+                    <a href="#contact" class="btn btn-accent">Get Quote</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon creative">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Development</h3>
+                    <p>Native and cross-platform mobile applications for iOS and Android. User-centric design with seamless performance and app store optimization.</p>
+                    <ul class="service-features">
+                        <li>iOS & Android Apps</li>
+                        <li>React Native Development</li>
+                        <li>App Store Optimization</li>
+                        <li>Push Notifications</li>
+                    </ul>
+                    <div class="service-price">Starting at $3,500</div>
+                    <a href="#contact" class="btn btn-creative">Get Quote</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon success">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>User experience research, interface design, and prototyping. Creating intuitive designs that enhance user engagement and conversion rates.</p>
+                    <ul class="service-features">
+                        <li>User Research & Testing</li>
+                        <li>Wireframing & Prototyping</li>
+                        <li>Design Systems</li>
+                        <li>Accessibility Optimization</li>
+                    </ul>
+                    <div class="service-price">Starting at $1,500</div>
+                    <a href="#contact" class="btn btn-success">Get Quote</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon warning">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Brand Design</h3>
+                    <p>Complete brand identity solutions including logo design, color systems, typography, and marketing materials that reflect your brand values.</p>
+                    <ul class="service-features">
+                        <li>Logo & Identity Design</li>
+                        <li>Brand Guidelines</li>
+                        <li>Marketing Materials</li>
+                        <li>Print & Digital Assets</li>
+                    </ul>
+                    <div class="service-price">Starting at $1,200</div>
+                    <a href="#contact" class="btn btn-warning">Get Quote</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon pink">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Consulting</h3>
+                    <p>Technical consulting for digital transformation, architecture reviews, performance audits, and strategic planning for your technology roadmap.</p>
+                    <ul class="service-features">
+                        <li>Technology Strategy</li>
+                        <li>Performance Audits</li>
+                        <li>Code Reviews</li>
+                        <li>Team Training</li>
+                    </ul>
+                    <div class="service-price">$150/hour</div>
+                    <a href="#contact" class="btn btn-pink">Book Session</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon indigo">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Maintenance & Support</h3>
+                    <p>Ongoing maintenance, updates, security monitoring, and technical support to keep your applications running smoothly and securely.</p>
+                    <ul class="service-features">
+                        <li>24/7 Monitoring</li>
+                        <li>Security Updates</li>
+                        <li>Performance Optimization</li>
+                        <li>Bug Fixes & Updates</li>
+                    </ul>
+                    <div class="service-price">Starting at $500/month</div>
+                    <a href="#contact" class="btn btn-indigo">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span>Client</span> <span class="highlight">Testimonials</span>
+                </h2>
+                <p class="section-subtitle">
+                    What my clients say about working with me
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Exceptional work quality and attention to detail. The portfolio redesign exceeded our expectations and significantly improved our client acquisition rate. Professional, reliable, and creative."
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" alt="Sarah Johnson">
+                        <div class="author-info">
+                            <div class="author-name">Sarah Johnson</div>
+                            <div class="author-position">CEO, TechStart Inc.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "The mobile app development was flawless. Great communication throughout the project, delivered on time and within budget. The app performs beautifully on both platforms."
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" alt="Michael Chen">
+                        <div class="author-info">
+                            <div class="author-name">Michael Chen</div>
+                            <div class="author-position">Founder, FitLife App</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Outstanding brand design work! The logo and brand identity perfectly capture our company values. The complete package including guidelines has been invaluable for our marketing efforts."
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="avatar-2.jpg" alt="Emily Rodriguez">
+                        <div class="author-info">
+                            <div class="author-name">Emily Rodriguez</div>
+                            <div class="author-position">Marketing Director, GreenTech</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span>Let's Work</span> <span class="highlight">Together</span>
+                </h2>
+                <p class="section-subtitle">
+                    Ready to bring your ideas to life? Let's discuss your project and create something amazing.
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-text">
+                        <h3>Get In Touch</h3>
+                        <p>
+                            I'm always interested in new opportunities and exciting projects. 
+                            Whether you need a complete digital solution or just want to discuss an idea, 
+                            I'd love to hear from you.
+                        </p>
+                    </div>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon accent">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-data">
+                                <div class="contact-label">Email</div>
+                                <div class="contact-value">tominiyiayomide068@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon success">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-data">
+                                <div class="contact-label">Phone</div>
+                                <div class="contact-value">+234-9036084447, +234-9042410987</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon creative">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-data">
+                                <div class="contact-label">Location</div>
+                                <div class="contact-value">Abuja, Nigeria.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h4>Follow Me</h4>
+                        <div class="social-icons">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-behance"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form action="https://formspree.io/f/mvgqqbvp" method="POST">
+                        <div id="contact-form" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+
+                            <input type="hidden" name="_next" value="https://yourportfolio.com/thank-you.html">
+
+
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="web-development">Web Development</option>
+                                <option value="mobile-development">Mobile Development</option>
+                                <option value="ui-ux-design">UI/UX Design</option>
+                                <option value="brand-design">Brand Design</option>
+                                <option value="consulting">Consulting</option>
+                                <option value="maintenance">Maintenance & Support</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget">Project Budget</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select budget range</option>
+                                <option value="under-5k">Under $5,000</option>
+                                <option value="5k-10k">$5,000 - $10,000</option>
+                                <option value="10k-25k">$10,000 - $25,000</option>
+                                <option value="25k-50k">$25,000 - $50,000</option>
+                                <option value="over-50k">Over $50,000</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, goals, timeline, and any specific requirements..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-logo">Portfolio</div>
+                    <p class="footer-description">
+                        Full-stack developer and designer creating digital experiences that combine 
+                        beautiful design with powerful functionality.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Web Development</a></li>
+                        <li><a href="#services">Mobile Apps</a></li>
+                        <li><a href="#services">UI/UX Design</a></li>
+                        <li><a href="#services">Brand Design</a></li>
+                        <li><a href="#services">Consulting</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Portfolio. All rights reserved. Built with passion and modern technologies.</p>
+            </div>
+        </div>
+    </footer>
+
+   <script>
+    // Mobile menu toggle
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
+
+    mobileMenu.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
+    // Navbar scroll effect
+    function handleScroll() {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Initialize skill bars animation
+    function initSkillBars() {
+        const skillsSection = document.getElementById('skills');
+        let skillsAnimated = false;
+        
+        const observerOptions = {
+            threshold: 0.3
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !skillsAnimated) {
+                    animateSkillBars();
+                    skillsAnimated = true;
+                }
+            });
+        }, observerOptions);
+        
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+    }
+
+    // Animate skill bars
+    function animateSkillBars() {
+        const skillFills = document.querySelectorAll('.skill-fill');
+        
+        skillFills.forEach((fill, index) => {
+            setTimeout(() => {
+                const width = fill.getAttribute('data-width');
+                fill.style.width = width + '%';
+            }, index * 200);
+        });
+    }
+
+    // Initialize contact form
+    function initContactForm() {
+        const contactForm = document.getElementById('contact-form');
+        
+        if (!contactForm) return;
+        
+        contactForm.addEventListener('submit', handleContactFormSubmit);
+    }
+
+    // Handle contact form submission
+    async function handleContactFormSubmit(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton ? submitButton.innerHTML : '';
+
+        // Get form values
+        const contactData = {
+            firstName: formData.get('firstName'),
+            lastName: formData.get('lastName'),
+            email: formData.get('email'),
+            service: formData.get('service'),
+            budget: formData.get('budget') || null,
+            message: formData.get('message')
+        };
+
+        // Validate required fields
+        if (!contactData.firstName || !contactData.lastName || !contactData.email || !contactData.service || !contactData.message) {
+            showNotification('Please fill in all required fields.', 'error');
+            return;
+        }
+
+        // Validate email
+        if (!isValidEmail(contactData.email)) {
+            showNotification('Please enter a valid email address.', 'error');
+            return;
+        }
+
+        // Show loading state
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        }
+
+        // Simulate form submission (replace with actual API call)
+        try {
+            await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate API delay
+            
+            // Show success message
+            showNotification('Message sent successfully! Thank you for reaching out. I\'ll get back to you soon.', 'success');
+            
+            // Reset form
+            form.reset();
+
+        } catch (error) {
+            console.error('Error sending message:', error);
+            showNotification('Failed to send message. Please try again later.', 'error');
+        } finally {
+            // Reset button state
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+            }
+        }
+    }
+
+    // Email validation
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    // Show notification
+    function showNotification(message, type = 'info') {
+        // Remove existing notifications
+        const existingNotifications = document.querySelectorAll('.notification');
+        existingNotifications.forEach(notification => notification.remove());
+        
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.innerHTML = `
+            <div class="notification-content">
+                <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+                <span>${message}</span>
+                <button class="notification-close" onclick="this.parentElement.parentElement.remove()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        `;
+        
+        // Add notification styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .notification {
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                max-width: 400px;
+                padding: 1rem;
+                border-radius: 0.5rem;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+                z-index: 10000;
+                animation: slideInRight 0.3s ease;
+            }
+            
+            .notification-success {
+                background-color: var(--success);
+                color: white;
+            }
+            
+            .notification-error {
+                background-color: #ef4444;
+                color: white;
+            }
+            
+            .notification-info {
+                background-color: var(--accent);
+                color: white;
+            }
+            
+            .notification-content {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+            }
+            
+            .notification-close {
+                background: none;
+                border: none;
+                color: white;
+                cursor: pointer;
+                padding: 0.25rem;
+                margin-left: auto;
+            }
+            
+            .notification-close:hover {
+                opacity: 0.7;
+            }
+            
+            @keyframes slideInRight {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        `;
+        
+        // Add styles to head if not already added
+        if (!document.querySelector('#notification-styles')) {
+            style.id = 'notification-styles';
+            document.head.appendChild(style);
+        }
+        
+        // Add notification to page
+        document.body.appendChild(notification);
+        
+        // Auto remove after 5 seconds
+        setTimeout(() => {
+            if (notification.parentElement) {
+                notification.remove();
+            }
+        }, 5000);
+    }
+
+    // Scroll animations
+    function initScrollAnimations() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animatable elements
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    }
+
+    // Tech items hover effects
+    function initTechHoverEffects() {
+        document.querySelectorAll('.tech-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.boxShadow = '0 0 20px rgba(59, 130, 246, 0.4)';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.boxShadow = '';
+            });
+        });
+    }
+
+    // Service card interactions
+    function initServiceInteractions() {
+        document.addEventListener('click', function(e) {
+            if (e.target.matches('.service-card .btn') || e.target.closest('.service-card .btn')) {
+                e.preventDefault();
+                
+                // Get service name from the card
+                const serviceCard = e.target.closest('.service-card');
+                const serviceName = serviceCard.querySelector('h3').textContent;
+                
+                // Scroll to contact section
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Pre-fill service in contact form
+                    setTimeout(() => {
+                        const serviceSelect = document.getElementById('service');
+                        if (serviceSelect) {
+                            const serviceValue = getServiceValue(serviceName);
+                            if (serviceValue) {
+                                serviceSelect.value = serviceValue;
+                            }
+                        }
+                    }, 500);
+                }
+            }
+        });
+    }
+
+    // Map service names to form values
+    function getServiceValue(serviceName) {
+        const serviceMap = {
+            'Web Development': 'web-development',
+            'Mobile Development': 'mobile-development',
+            'UI/UX Design': 'ui-ux-design',
+            'Brand Design': 'brand-design',
+            'Consulting': 'consulting',
+            'Maintenance & Support': 'maintenance'
+        };
+        
+        return serviceMap[serviceName] || '';
+    }
+
+    // Utility functions
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    // Handle resize events
+    window.addEventListener('resize', debounce(() => {
+        // Close mobile menu on resize
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        
+        if (window.innerWidth > 768) {
+            mobileMenu.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    }, 250));
+
+    // Preload critical images
+    function preloadImages() {
+        const criticalImages = [
+            'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
+            'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600'
+        ];
+        
+        criticalImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    }
+
+    // Error handling for failed image loads
+    document.addEventListener('error', function(e) {
+        if (e.target.tagName === 'IMG') {
+            e.target.style.display = 'none';
+            console.warn('Failed to load image:', e.target.src);
+        }
+    }, true);
+
+    // Initialize everything when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+        initSkillBars();
+        initContactForm();
+        initScrollAnimations();
+        initTechHoverEffects();
+        initServiceInteractions();
+        preloadImages();
+        
+        console.log('Portfolio loaded successfully');
+    });
+
+    // Export functions for global access
+    window.portfolioApp = {
+        showNotification
+    };
+    </script>
+</body>
+</html>
